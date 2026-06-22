@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Construct Sampler — A Full Paper-Desk Committee Deliberation (Paper Educational) | EAB</title>
+<meta name="description" content="See exactly how the EAB paper-trading committee turns one public USDA crop signal into a documented, human-reviewed paper construct: researcher / risk / bull / bear / PM views, sizing, journal, post-mortem. Paper / simulation only. Not financial advice.">
+<link rel="canonical" href="https://egiraldmu1795.github.io/eab-desk/construct-sampler.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Free Construct Sampler — A Full Paper-Desk Committee Deliberation | EAB">
+<meta property="og:description" content="One public USDA crop signal, the full committee record, sizing, journal, and post-mortem — exactly what a documented paper construct looks like. Paper / simulation only. Not financial advice.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://egiraldmu1795.github.io/eab-desk/construct-sampler.html">
+<meta property="og:image" content="https://egiraldmu1795.github.io/eab-desk/og.png">
+<meta property="og:site_name" content="EAB Paper-Trading Desk">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Construct Sampler — A Full Paper-Desk Committee Deliberation | EAB">
+<meta name="twitter:description" content="One public USDA crop signal, the full committee record, sizing, journal, and post-mortem. Paper / simulation only. Not financial advice.">
+<meta name="twitter:image" content="https://egiraldmu1795.github.io/eab-desk/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Free Construct Sampler — A Full Paper-Desk Committee Deliberation","author":{"@type":"Organization","name":"EAB Paper-Trading Desk"},"publisher":{"@type":"Organization","name":"EAB Paper-Trading Desk"},"description":"An illustrative, human-reviewed paper-trading construct showing the full committee deliberation record. Simulation and educational use only. Not financial advice. No guarantees.","disclaimer":"PAPER-TRADING / SIMULATION / EDUCATIONAL USE ONLY. Not financial advice. No income, earnings, or performance guarantees. All examples are illustrative and not predictive. Users must apply their own risk management rules. No live trading. No real brokerage. Not a solicitation."}</script>
+<style>
+:root {
+  --ink: #0b1220;
+  --text: #dcefdd;
+  --dim: #6f8a76;
+  --green: #10b981;
+  --green2: #1f9a3e;
+  --frame: #0e8f63;
+  --mint: #9fe6b4;
+  --gold: #ffd27a;
+  --amber: #ff9a3c;
+  --red: #ff5c72;
+  --ok: #7ee0a0;
+  --buy: #10b981;
+  --sell: #ff5c72;
+  --panel: rgba(9,20,13,.75);
+  --panel2: rgba(13,28,18,.80);
+  --bd: rgba(45,190,78,.28);
+  --warn: #ffd27a;
+}
+* { margin: 0; box-sizing: border-box; font-family: ui-rounded,"Segoe UI Rounded",
+    "Quicksand",ui-sans-serif,system-ui,sans-serif; }
+.mono { font-family: ui-monospace,"JetBrains Mono",Consolas,monospace; }
+html, body {
+  background: radial-gradient(125% 95% at 50% 6%,
+    #0d1a2e 0%, #0b1220 46%, #07090f 100%) fixed;
+  color: #dcefdd; min-height: 100vh; padding: 0 0 60px;
+}
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap { max-width: 900px; margin: 0 auto; padding: 28px 24px; }
+
+.disc-banner {
+  background: rgba(255,92,114,.08);
+  border: 1px solid rgba(255,92,114,.35);
+  border-radius: 12px;
+  padding: 14px 18px; margin-bottom: 24px;
+  font-size: 11px; line-height: 1.7; color: #e8c4ca;
+}
+.disc-banner b { color: var(--red); letter-spacing: 1px; }
+
+.sec-hdr {
+  font-size: 10px; letter-spacing: 4px; color: var(--green);
+  margin: 28px 0 12px; text-transform: uppercase;
+  display: flex; align-items: center; gap: 10px;
+}
+.sec-hdr::after { content: ""; flex: 1; height: 1px; background: var(--bd); }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--bd);
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 8px 32px #0009;
+}
+.card-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+.ticker { font-size: 28px; font-weight: 900; letter-spacing: 2px; color: var(--text); }
+.side-pill { font-size: 10px; font-weight: 800; letter-spacing: 1px; padding: 3px 12px; border-radius: 20px; }
+.side-short { background: var(--red); color: #fff; }
+.conf-tag { font-size: 11px; color: var(--mint); letter-spacing: 1px; margin-left: auto; }
+.conf-tag b { color: var(--green); font-size: 14px; }
+
+.levels { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px; }
+.levels th { text-align: left; padding: 6px 10px; font-size: 9px; letter-spacing: 2px; color: var(--dim); border-bottom: 1px solid var(--bd); text-transform: uppercase; }
+.levels td { padding: 8px 10px; border-bottom: 1px solid rgba(45,190,78,.10); }
+.levels .lbl { color: var(--mint); font-weight: 700; }
+.levels .val { color: var(--green); font-weight: 800; font-size: 14px; }
+.levels .note { color: var(--dim); font-size: 10px; font-style: italic; }
+.levels tr.cutoff .val { color: var(--red); }
+.levels tr.target .val { color: var(--gold); }
+
+.illus-note { font-size: 10px; color: var(--amber); letter-spacing: 1px; margin-top: 6px; font-style: italic; }
+
+.an-row { display: flex; gap: 8px; align-items: center; margin: 16px 0 6px; flex-wrap: wrap; }
+.an-chip { font-size: 9px; padding: 3px 9px; border-radius: 20px; border: 1px solid var(--bd); color: var(--text); letter-spacing: 1px; font-weight: 800; text-transform: uppercase; }
+.an-chip.bullish { border-color: var(--green); color: var(--green); }
+.an-chip.bearish { border-color: var(--red); color: var(--red); }
+.an-chip.neutral { border-color: var(--dim); color: var(--dim); }
+.an-chip.pm { border-color: var(--gold); color: var(--gold); }
+
+.rationale { font-size: 12px; line-height: 1.75; color: var(--dim); margin-top: 4px; padding: 11px 14px; background: var(--panel2); border-radius: 10px; border-left: 3px solid var(--bd); }
+
+.risk-box { background: rgba(255,210,122,.07); border: 1px solid rgba(255,210,122,.3); border-radius: 12px; padding: 14px 18px; margin: 20px 0; font-size: 12px; line-height: 1.7; }
+.risk-box b { color: var(--gold); }
+
+.footer { border-top: 1px solid var(--bd); margin-top: 48px; padding-top: 24px; font-size: 10px; color: var(--dim); line-height: 1.9; text-align: center; letter-spacing: .5px; }
+.footer b { color: var(--mint); }
+
+.review-stamp { display: inline-block; font-size: 10px; letter-spacing: 2px; color: var(--mint); border: 1px solid var(--bd); border-radius: 20px; padding: 4px 12px; margin: 4px 0; text-transform: uppercase; }
+
+.cta-box { background: linear-gradient(135deg, rgba(52,211,90,.12), rgba(31,154,62,.07)); border: 1px solid var(--green); border-radius: 16px; padding: 28px 32px; text-align: center; margin: 30px 0; }
+.cta-box h2 { color: var(--green); font-size: 20px; margin-bottom: 10px; letter-spacing: 1px; }
+.cta-box p { color: var(--mint); font-size: 13px; line-height: 1.7; margin-bottom: 16px; }
+.cta-btn { display: inline-block; background: var(--green); color: #06140a; font-weight: 800; font-size: 13px; letter-spacing: 2px; padding: 12px 32px; border-radius: 30px; text-decoration: none; }
+.cta-btn:hover { background: var(--frame); text-decoration: none; }
+.price-chips { display: flex; gap: 10px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+.price-chip { border: 1px solid var(--bd); border-radius: 20px; padding: 6px 16px; font-size: 11px; color: var(--dim); letter-spacing: 1px; }
+.price-chip b { color: var(--gold); }
+
+.breadcrumb { font-size: 11px; color: var(--dim); letter-spacing: 1px; margin-bottom: 14px; }
+.nav{display:flex;gap:18px;align-items:center;padding:16px 24px;max-width:1000px;margin:0 auto;font-size:13px;letter-spacing:1px;flex-wrap:wrap;}.nav .logo{font-weight:900;letter-spacing:3px;color:var(--green);text-shadow:0 0 22px #10b98155;}.nav a{color:var(--mint);}.nav .spacer{flex:1;}.btn{display:inline-block;background:var(--green);color:#06140a;font-weight:800;font-size:13px;letter-spacing:1.5px;padding:12px 26px;border-radius:30px;text-align:center;}.btn:hover{background:#0e8f63;text-decoration:none;}.btn.ghost{background:transparent;color:var(--green);border:1.5px solid var(--green);}.prod{background:var(--panel);border:1px solid var(--bd);border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;box-shadow:0 8px 32px #0009;}.prod .kk{font-size:10px;letter-spacing:2px;color:var(--green);font-weight:800;text-transform:uppercase;}.prod h3{font-size:21px;color:var(--text);margin:8px 0 6px;font-weight:800;}.prod p{font-size:13.5px;color:var(--dim);line-height:1.65;flex:1;}.prod .price{font-size:13px;color:var(--gold);font-weight:800;margin:14px 0 12px;letter-spacing:.5px;}.cta-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:21px;margin:34px 0 8px;}.cta-strip .prod{background:linear-gradient(135deg,rgba(16,185,129,.10),rgba(31,154,62,.05));}.footnav{font-size:11px;color:var(--dim);text-align:center;margin-top:30px;letter-spacing:1px;}.footnav a{margin:0 8px;}
+</style>
+</head>
+<body>
+<div class="nav"><a class="logo" href="index.html">EAB</a><a href="index.html">Home</a><a href="blog/index.html">Blog</a><a href="free/index.html">Free sample</a><a href="construct-sampler.html">Construct sampler</a><a href="https://egiraldmu1795.github.io/eab-paper-desk-demo/">Live demo</a><span class="spacer"></span><a class="btn ghost" href="https://egirald.gumroad.com/l/fast-mover-watch">Subscribe</a></div>
+
+<div class="wrap">
+<div class="breadcrumb"><a href="index.html">Home</a> / Construct sampler</div>
+<h1 style="font-size:30px;color:var(--text);font-weight:900;line-height:1.15">Free Construct Sampler</h1>
+<p style="color:var(--dim);font-size:14px;margin:10px 0 6px;line-height:1.65">This is exactly what one documented paper construct looks like inside the EAB desk: a single <b style="color:var(--mint)">public signal</b> taken through the full committee — researcher, risk, bull, bear, and a portfolio-manager decision — then sized, journaled, and post-mortemed. Most "trade idea" feeds hide this. We ship the whole record.</p>
+<p style="color:var(--amber);font-size:12px;margin:8px 0 4px;font-style:italic">Paper / simulation only. Numbers below are illustrative and shape-matched to real feed output — they are not real quotes, recommendations, or results.</p>
+<span class="review-stamp">Paper · Human Reviewed · 2026-06-22</span>
+
+<div class="disc-banner"><b>DISCLAIMER:</b> This construct is produced by EAB's paper-trading desk and is strictly for EDUCATIONAL / SIMULATION use only. It is NOT financial advice and does NOT constitute a recommendation to buy, sell, or hold any security. All levels, deliberations, sizing, and P&L shown are ILLUSTRATIVE and DERIVED FROM A PAPER-TRADING COMMITTEE — they are NOT real intraday quotes, analyst price targets, or broker recommendations. Past paper-trade results (simulated) are not indicative of future results. EAB makes NO income, earnings, profit, or performance guarantees of any kind. No live trading, no real brokerage, and no real money is involved. The real-money gate is manual and human-controlled (ADR-0004). Users are solely responsible for their own decisions and must apply their own risk management at all times.</div>
+
+<div class="card">
+<div class="card-top">
+  <span class="ticker">ZC</span>
+  <span class="side-pill side-short">SHORT (PAPER)</span>
+  <span class="conf-tag">Confidence <b>6/10</b></span>
+</div>
+<div style="font-size:13px;color:var(--mint);font-weight:800;letter-spacing:1px">Construct 03 — Ag Condition Fade</div>
+<div style="font-size:11px;color:var(--dim);margin-top:3px">Signal: USDA NASS Crop Progress &amp; Condition (weekly state tables · nass.usda.gov) — a free, public government feed.</div>
+</div>
+
+<div class="sec-hdr">Signal source &amp; raw input</div>
+<div class="rationale">
+Feed: USDA NASS Crop Progress &amp; Condition (weekly). Key extracts (synthetic but shape-matched to real feed output for illustration):
+<ul style="margin:8px 0 0 18px;line-height:1.9;color:var(--mint)">
+  <li>Corn: 68% good-to-excellent, +1 pp week-over-week (national)</li>
+  <li>Soy: 65% good-to-excellent, flat to −1 pp</li>
+  <li>Key states (IL, IA, NE) showing slight improvement or stable high condition</li>
+</ul>
+<div style="margin-top:10px"><b style="color:var(--text)">Interpretation surface:</b> better-than-feared crop condition can pressure prices (supply outlook improves). This is a short-horizon "report reaction" read, not a structural view on ag.</div>
+</div>
+
+<div class="sec-hdr">Committee deliberation (condensed excerpts)</div>
+
+<div class="an-row"><span class="an-chip neutral">Researcher</span></div>
+<div class="rationale">Public data shows corn condition ticking higher nationally; no major weather shock in the release. Historical pattern: condition beats can lead to 1–3 session fades in grain futures if no offsetting demand story. Context: current carry + export pace still supportive on the longer view.</div>
+
+<div class="an-row"><span class="an-chip bearish">Risk</span></div>
+<div class="rationale">Upside risk if later weeks reverse (drought / heat). Size must stay small; grain vol can spike on weather headlines. Correlation note: overlaps with energy (ethanol) and macro (USD). Conservative: cap at 1.5–2.5% portfolio risk budget even on a clean setup. Do not pyramid.</div>
+
+<div class="an-row"><span class="an-chip bullish">Bull</span></div>
+<div class="rationale">Strong crop = cheaper feed = margin expansion for livestock/ethanol downstream. If export sales data (separate) stays firm, price may not fade as much. A counter to "sell the news."</div>
+
+<div class="an-row"><span class="an-chip bearish">Bear</span></div>
+<div class="rationale">Classic "good news is bad news" for producers. Improved condition removes a bullish uncertainty premium; fast money often sells the beat. Precedent in prior seasons: 2–5% post-report moves lower on similar prints when no macro bid (illustrative, paper).</div>
+
+<div class="an-row"><span class="an-chip pm">Portfolio Manager — decision</span></div>
+<div class="rationale"><b style="color:var(--gold)">Decision (paper):</b> short corn (ZC, or a relevant ETF proxy for the paper sim) on the condition beat. Small size. Thesis is mean-reversion to the report, not a macro call. <b style="color:var(--gold)">Confidence: 6/10.</b> Invalidation if the next 1–2 sessions hold above the report-day high or follow-on bullish news arrives. Rationale: "Condition beat removes the fear premium. Market will likely sell it until proven otherwise by demand or weather. Keep size tiny — this is a 1–3 day paper test of report reaction."</div>
+
+<div class="sec-hdr">The construct (structured)</div>
+<table class="levels">
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td class="lbl">Instrument</td><td class="val">ZC (corn) / example ag proxy</td></tr>
+<tr><td class="lbl">Side</td><td class="val">Short (paper)</td></tr>
+<tr><td class="lbl">Size rule</td><td class="val">~1.8% risk of paper book <span class="note">(risk_sizing applied)</span></td></tr>
+<tr><td class="lbl">Entry window</td><td class="val">Post-report open / first 30–60 min <span class="note">(paper sim)</span></td></tr>
+<tr class="target"><td class="lbl">Target area</td><td class="val">Prior support / mean-reversion zone <span class="note">(paper only)</span></td></tr>
+<tr class="cutoff"><td class="lbl">Invalidation</td><td class="val">Sustained strength above report high + no follow-through weakness</td></tr>
+<tr><td class="lbl">Paper-only flag</td><td class="val">true</td></tr>
+<tr><td class="lbl">Requires human approval</td><td class="val">true <span class="note">(per gate, ADR-0004)</span></td></tr>
+</table>
+<div class="illus-note">All values illustrative and paper-only. No order was placed; nothing here touches real capital.</div>
+
+<div class="sec-hdr">Simulated execution &amp; journal (paper)</div>
+<div class="rationale">
+<ul style="margin:0 0 0 18px;line-height:1.95">
+  <li>Proposal timestamp: post-release reference</li>
+  <li>Simulated fill (paper): marked at the first available post-report level for the cycle</li>
+  <li>At review mark (example): paper P&amp;L on this slice ≈ −0.4R <span style="color:var(--amber)">(illustrative; production uses actual replay from paper_ledger)</span></li>
+  <li>Audit: written to the paper journal with <span class="mono" style="color:var(--mint)">paper=True</span>, <span class="mono" style="color:var(--mint)">executed_live=False</span> — visible in the ledger history</li>
+</ul>
+</div>
+
+<div class="risk-box">
+<b>RISK NOTES &amp; GUARDRAILS</b><br>
+Size capped &lt;2% risk this cycle · no add-on if it fades immediately (fade-chasing rule) · monitor correlation to the broader ag/energy complex · short-horizon "report reaction," not a structural bearish view · if condition numbers reverse in a subsequent NASS print, the thesis is invalidated — amend or exit.
+</div>
+
+<div class="sec-hdr">Post-mortem / amendment note</div>
+<div class="rationale" style="font-style:italic">
+(Production amendment, illustrative): "Week +2: price faded into the target zone; took partial at +1.1R paper. Remainder stopped at invalidation on follow-up strength. Net paper +0.6R on the slice. Lesson: better to size smaller on single-feed beats when the macro bid is unknown." — Every material change gets a delta entry and a refreshed review date.
+</div>
+
+<span class="review-stamp">Paper · Human Reviewed · 2026-06-22</span>
+<p style="font-size:11px;color:var(--dim);margin-top:8px;line-height:1.7">Full committee record + risk box + sizing math re-read by a human. No broker, no live path, no execution outside the paper sim. In the quarterly Model Book this page would appear with the same <b style="color:var(--mint)">Paper · Human Reviewed [date]</b> footer on every page.</p>
+
+<div class="cta-box">
+  <h2>Want to build (or follow) the desk that produces this?</h2>
+  <p>
+    The full paper-trading committee, the human money-gate, and the daily Fast Mover Watch are all live.
+    Learn to build it yourself, or subscribe to the daily paper output. Educational, paper-only. No guarantees.
+  </p>
+  <a class="cta-btn" href="https://egirald.gumroad.com/l/tvjadh" target="_blank" rel="noopener">GET THE COURSE — $149</a>
+  <div class="price-chips">
+    <div class="price-chip"><b>Course</b> · lifetime · $149</div>
+    <div class="price-chip"><b>Fast Mover Watch</b> · from $79/mo</div>
+  </div>
+  <div style="font-size:9px;color:var(--dim);margin-top:14px;letter-spacing:1px">PAPER-ONLY · EDUCATIONAL · NO GUARANTEES · NOT FINANCIAL ADVICE</div>
+</div>
+
+<div class="cta-strip">
+  <div class="prod">
+    <div class="kk">Build Your Own</div>
+    <h3>The AI Money Machine</h3>
+    <p>Learn to build an AI organization that runs your money and businesses on a $0/month home PC — a paper-first trading committee, a content engine, and a self-healing back-office. Educational only. No income guarantees.</p>
+    <div class="price">Lifetime access · $149</div>
+    <a class="btn" href="https://egirald.gumroad.com/l/tvjadh">Get the course — $149 &rarr;</a>
+  </div>
+  <div class="prod">
+    <div class="kk">Daily Signal Watchlist</div>
+    <h3>Fast Mover Watch</h3>
+    <p>The full daily watchlist with illustrative entry / alert / cutoff / target levels, the 10AM hard-exit discipline, per-analyst breakdown, and the paper ledger. Educational, paper-only. Not financial advice.</p>
+    <div class="price">From $79/mo · $199/qtr · $699/yr</div>
+    <a class="btn" href="https://egirald.gumroad.com/l/fast-mover-watch">Subscribe from $79/mo &rarr;</a>
+    &nbsp;
+    <a class="btn ghost" href="https://egiraldmu1795.github.io/fast-mover-watch/">See all plans &amp; a free preview &rarr;</a>
+  </div>
+</div>
+
+<p class="footnav">
+  <a href="index.html">Home</a>·<a href="blog/index.html">Blog</a>·<a href="free/index.html">Free sample</a>·<a href="construct-sampler.html">Construct sampler</a>
+</p>
+</div>
+
+<div class="wrap"><div class="footer">EAB Paper-Trading Desk · EDUCATIONAL / SIMULATION ONLY · NOT FINANCIAL ADVICE · NO LIVE TRADING<br>PAPER-TRADING / SIMULATION / EDUCATIONAL USE ONLY. Not financial advice. No income, earnings, or performance guarantees. All examples are illustrative and not predictive. Users must apply their own risk management rules. No live trading. No real brokerage. Not a solicitation.<br>Paper · Human Reviewed · 2026-06-22</div></div>
+</body>
+</html>
