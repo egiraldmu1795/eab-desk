@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fast Mover Watch Blog — Daily Pre-Market Momentum Digests (Paper Educational) | EAB</title>
+<meta name="description" content="Daily Fast Mover Watch digests from EAB&#x27;s paper-trading desk. Pre-market momentum study, illustrative levels, 10AM discipline. Educational only. Not...">
+<link rel="canonical" href="https://egiraldmu1795.github.io/eab-desk/blog/index.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Fast Mover Watch Blog — Daily Pre-Market Momentum Digests (Paper Educational) | EAB">
+<meta property="og:description" content="Daily Fast Mover Watch digests from EAB&#x27;s paper-trading desk. Pre-market momentum study, illustrative levels, 10AM discipline. Educational only. Not...">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://egiraldmu1795.github.io/eab-desk/blog/index.html">
+<meta property="og:image" content="https://egiraldmu1795.github.io/eab-desk/og.png">
+<meta property="og:site_name" content="EAB Paper-Trading Desk">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fast Mover Watch Blog — Daily Pre-Market Momentum Digests (Paper Educational) | EAB">
+<meta name="twitter:description" content="Daily Fast Mover Watch digests from EAB&#x27;s paper-trading desk. Pre-market momentum study, illustrative levels, 10AM discipline. Educational only. Not...">
+<meta name="twitter:image" content="https://egiraldmu1795.github.io/eab-desk/og.png">
+<style>
+:root {
+  --ink: #0b1220;
+  --text: #dcefdd;
+  --dim: #6f8a76;
+  --green: #10b981;
+  --green2: #1f9a3e;
+  --frame: #0e8f63;
+  --mint: #9fe6b4;
+  --gold: #ffd27a;
+  --amber: #ff9a3c;
+  --red: #ff5c72;
+  --ok: #7ee0a0;
+  --buy: #10b981;
+  --sell: #ff5c72;
+  --panel: rgba(9,20,13,.75);
+  --panel2: rgba(13,28,18,.80);
+  --bd: rgba(45,190,78,.28);
+  --warn: #ffd27a;
+}
+* { margin: 0; box-sizing: border-box; font-family: ui-rounded,"Segoe UI Rounded",
+    "Quicksand",ui-sans-serif,system-ui,sans-serif; }
+.mono { font-family: ui-monospace,"JetBrains Mono",Consolas,monospace; }
+html, body {
+  background: radial-gradient(125% 95% at 50% 6%,
+    #0d1a2e 0%, #0b1220 46%, #07090f 100%) fixed;
+  color: #dcefdd; min-height: 100vh; padding: 0 0 60px;
+}
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* --- header --- */
+.hdr {
+  display: flex; align-items: center; gap: 14px;
+  padding: 22px 32px 16px;
+  border-bottom: 1px solid var(--bd);
+  background: rgba(9,20,13,.55);
+}
+.brand-name {
+  font-size: 22px; font-weight: 900; letter-spacing: 3px;
+  color: var(--green); text-shadow: 0 0 22px #10b98155;
+}
+.brand-sub {
+  font-size: 9px; letter-spacing: 4px; color: var(--dim); margin-top: 2px;
+}
+.date-tag {
+  margin-left: auto; font-size: 11px; letter-spacing: 2px;
+  color: var(--dim); text-align: right;
+}
+.date-tag b { color: var(--mint); font-size: 13px; display: block; }
+
+/* --- content wrapper --- */
+.wrap { max-width: 900px; margin: 0 auto; padding: 28px 24px; }
+
+/* --- disclaimer banner --- */
+.disc-banner {
+  background: rgba(255,92,114,.08);
+  border: 1px solid rgba(255,92,114,.35);
+  border-radius: 12px;
+  padding: 14px 18px; margin-bottom: 24px;
+  font-size: 11px; line-height: 1.7; color: #e8c4ca;
+}
+.disc-banner b { color: var(--red); letter-spacing: 1px; }
+
+/* --- section headers --- */
+.sec-hdr {
+  font-size: 10px; letter-spacing: 4px; color: var(--green);
+  margin: 28px 0 12px; text-transform: uppercase;
+  display: flex; align-items: center; gap: 10px;
+}
+.sec-hdr::after {
+  content: ""; flex: 1; height: 1px; background: var(--bd);
+}
+
+/* --- ticker card --- */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--bd);
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 8px 32px #0009;
+}
+.card-top {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+}
+.ticker {
+  font-size: 28px; font-weight: 900; letter-spacing: 2px; color: var(--text);
+}
+.side-pill {
+  font-size: 10px; font-weight: 800; letter-spacing: 1px;
+  padding: 3px 12px; border-radius: 20px;
+}
+.side-buy  { background: var(--buy); color: #06140a; }
+.side-sell { background: var(--sell); color: #fff; }
+.side-short { background: var(--red); color: #fff; }
+.side-hold { background: rgba(111,138,118,.3); color: var(--dim); }
+.conf-tag {
+  font-size: 11px; color: var(--mint); letter-spacing: 1px;
+  margin-left: auto;
+}
+.conf-tag b { color: var(--green); font-size: 14px; }
+
+/* --- levels table --- */
+.levels {
+  width: 100%; border-collapse: collapse; margin: 12px 0;
+  font-size: 12px;
+}
+.levels th {
+  text-align: left; padding: 6px 10px; font-size: 9px;
+  letter-spacing: 2px; color: var(--dim); border-bottom: 1px solid var(--bd);
+  text-transform: uppercase;
+}
+.levels td {
+  padding: 8px 10px; border-bottom: 1px solid rgba(45,190,78,.10);
+}
+.levels .lbl { color: var(--mint); font-weight: 700; }
+.levels .val { color: var(--green); font-weight: 800; font-size: 14px; }
+.levels .note { color: var(--dim); font-size: 10px; font-style: italic; }
+.levels tr.cutoff .val { color: var(--red); }
+.levels tr.target .val { color: var(--gold); }
+
+.illus-note {
+  font-size: 10px; color: var(--amber); letter-spacing: 1px;
+  margin-top: 6px; font-style: italic;
+}
+
+/* --- analyst breakdown --- */
+.analysts {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;
+}
+.an-chip {
+  font-size: 9px; padding: 3px 9px; border-radius: 20px;
+  border: 1px solid var(--bd); color: var(--text); letter-spacing: 1px;
+}
+.an-chip.bullish { border-color: var(--green); color: var(--green); }
+.an-chip.bearish  { border-color: var(--red); color: var(--red); }
+.an-chip.neutral  { border-color: var(--dim); color: var(--dim); }
+
+/* --- rationale --- */
+.rationale {
+  font-size: 11.5px; line-height: 1.7; color: var(--dim);
+  margin-top: 10px; padding: 10px 13px;
+  background: var(--panel2); border-radius: 10px;
+  border-left: 3px solid var(--bd);
+}
+
+/* --- risk rule box --- */
+.risk-box {
+  background: rgba(255,210,122,.07);
+  border: 1px solid rgba(255,210,122,.3);
+  border-radius: 12px;
+  padding: 14px 18px; margin: 20px 0;
+  font-size: 12px; line-height: 1.7;
+}
+.risk-box b { color: var(--gold); }
+
+/* --- 10AM discipline --- */
+.exit-box {
+  background: rgba(255,92,114,.07);
+  border: 1px solid rgba(255,92,114,.28);
+  border-radius: 12px;
+  padding: 14px 18px; margin: 20px 0;
+  font-size: 12px; line-height: 1.7;
+}
+.exit-box b { color: var(--red); }
+
+/* --- ledger table --- */
+.ledger {
+  width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 12px;
+}
+.ledger th {
+  text-align: left; padding: 7px 12px;
+  font-size: 9px; letter-spacing: 2px; color: var(--dim);
+  border-bottom: 1px solid var(--bd); text-transform: uppercase;
+}
+.ledger td { padding: 9px 12px; border-bottom: 1px solid rgba(45,190,78,.10); }
+.ledger .num { color: var(--green); font-weight: 800; text-align: right; }
+.ledger .num-warn { color: var(--amber); font-weight: 800; text-align: right; }
+.ledger tr:last-child td { border-bottom: none; }
+
+/* --- movers mini-cards --- */
+.mover-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: 10px; margin: 10px 0;
+}
+.mover-card {
+  background: var(--panel2); border: 1px solid var(--bd);
+  border-radius: 12px; padding: 10px 13px;
+}
+.mover-card .tk { font-size: 15px; font-weight: 800; }
+.mover-card .who { font-size: 10px; color: var(--mint); margin-top: 3px; }
+.mover-card .meta { font-size: 9px; color: var(--dim); margin-top: 4px; }
+
+/* --- CTA section (free tier) --- */
+.cta-box {
+  background: linear-gradient(135deg, rgba(52,211,90,.12), rgba(31,154,62,.07));
+  border: 1px solid var(--green);
+  border-radius: 16px; padding: 28px 32px; text-align: center;
+  margin: 30px 0;
+}
+.cta-box h2 { color: var(--green); font-size: 20px; margin-bottom: 10px; letter-spacing: 1px; }
+.cta-box p  { color: var(--mint); font-size: 13px; line-height: 1.7; margin-bottom: 16px; }
+.cta-btn {
+  display: inline-block;
+  background: var(--green); color: #06140a;
+  font-weight: 800; font-size: 13px; letter-spacing: 2px;
+  padding: 12px 32px; border-radius: 30px;
+  text-decoration: none;
+}
+.cta-btn:hover { background: var(--frame); text-decoration: none; }
+.price-chips { display: flex; gap: 10px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+.price-chip {
+  border: 1px solid var(--bd); border-radius: 20px;
+  padding: 6px 16px; font-size: 11px; color: var(--dim); letter-spacing: 1px;
+}
+.price-chip b { color: var(--gold); }
+
+/* --- footer --- */
+.footer {
+  border-top: 1px solid var(--bd);
+  margin-top: 48px; padding-top: 24px;
+  font-size: 10px; color: var(--dim); line-height: 1.9;
+  text-align: center; letter-spacing: .5px;
+}
+.footer b { color: var(--mint); }
+
+/* The GOD sequence — golden scale (scripts/lib/fibonacci.py) */
+:root {
+  --phi: 1.618033988749895;
+  --inv-phi: 0.6180339887498949;
+  --s-0: 5px;
+  --s-1: 8px;
+  --s-2: 13px;
+  --s-3: 21px;
+  --s-4: 34px;
+  --s-5: 55px;
+  --s-6: 89px;
+  --f-0: 13px;
+  --f-1: 21px;
+  --f-2: 34px;
+  --f-3: 55px;
+  --f-4: 89px;
+}
+.nav{display:flex;gap:18px;align-items:center;padding:16px 24px;max-width:1000px;margin:0 auto;font-size:13px;letter-spacing:1px;flex-wrap:wrap;}.nav .logo{font-weight:900;letter-spacing:3px;color:var(--green);text-shadow:0 0 22px #10b98155;}.nav a{color:var(--mint);}.nav .spacer{flex:1;}.hero-h{max-width:1000px;margin:0 auto;padding:48px 24px 8px;}.hero-h h1{font-size:clamp(28px,5vw,46px);font-weight:900;letter-spacing:-1px;line-height:1.12;color:var(--text);}.hero-h .grad{background:linear-gradient(90deg,var(--green),var(--mint));-webkit-background-clip:text;background-clip:text;color:transparent;}.hero-h p.sub{font-size:clamp(15px,2vw,19px);color:var(--dim);max-width:680px;margin-top:14px;line-height:1.6;}.pillrow{margin-top:16px;}.pill{display:inline-block;border:1px solid var(--bd);border-radius:999px;padding:5px 13px;font-size:11px;color:var(--dim);letter-spacing:1px;margin:4px 6px 4px 0;}.prodgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;max-width:1000px;margin:26px auto;padding:0 24px;}.prod{background:var(--panel);border:1px solid var(--bd);border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;box-shadow:0 8px 32px #0009;}.prod .kk{font-size:10px;letter-spacing:2px;color:var(--green);font-weight:800;text-transform:uppercase;}.prod h3{font-size:21px;color:var(--text);margin:8px 0 6px;font-weight:800;}.prod p{font-size:13.5px;color:var(--dim);line-height:1.65;flex:1;}.prod .price{font-size:13px;color:var(--gold);font-weight:800;margin:14px 0 12px;letter-spacing:.5px;}.btn{display:inline-block;background:var(--green);color:#06140a;font-weight:800;font-size:13px;letter-spacing:1.5px;padding:12px 26px;border-radius:30px;text-align:center;}.btn:hover{background:#0e8f63;text-decoration:none;}.btn.ghost{background:transparent;color:var(--green);border:1.5px solid var(--green);}.cta-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:34px 0 8px;}.cta-strip .prod{background:linear-gradient(135deg,rgba(16,185,129,.10),rgba(31,154,62,.05));}.postcard{background:var(--panel);border:1px solid var(--bd);border-radius:14px;padding:18px 20px;margin-bottom:12px;}.postcard a.tt{font-size:17px;font-weight:800;color:var(--text);}.postcard .dt{font-size:11px;color:var(--dim);letter-spacing:1px;margin:4px 0 8px;}.postcard .teaser{font-size:12.5px;color:var(--dim);line-height:1.6;}.breadcrumb{font-size:11px;color:var(--dim);letter-spacing:1px;margin-bottom:14px;}.digest-embed{margin:10px 0;}.formbox{background:var(--panel2);border:1px solid var(--bd);border-radius:16px;padding:24px 26px;margin:24px 0;}.formbox label{display:block;font-size:11px;letter-spacing:1px;color:var(--mint);margin:12px 0 6px;}.formbox input{width:100%;background:rgba(9,20,13,.7);border:1px solid var(--bd);border-radius:10px;padding:11px 13px;color:var(--text);font-size:14px;}.formbox .note{font-size:11px;color:var(--gold);margin-top:14px;line-height:1.6;font-style:italic;}.footnav{font-size:11px;color:var(--dim);text-align:center;margin-top:30px;letter-spacing:1px;}.footnav a{margin:0 8px;}
+.prodgrid{gap:var(--s-3);max-width:987px;}.cta-strip{gap:var(--s-3);}.prod{border-radius:var(--s-3);}.postcard{border-radius:var(--s-2);}.hero-h{max-width:987px;}</style>
+</head>
+<body><div class="nav"><a class="logo" href="../index.html">EAB</a><a href="../index.html">Home</a><a href="../blog/index.html">Blog</a><a href="../free/index.html">Free sample</a><span class="spacer"></span><a class="btn ghost" href="https://egirald.gumroad.com/l/fast-mover-watch">Subscribe</a></div><div class="wrap"><div class="breadcrumb"><a href="../index.html">Home</a> / Blog</div><h1 style="font-size:30px;color:var(--text);font-weight:900">Fast Mover Watch — Daily Digest Blog</h1><p style="color:var(--dim);font-size:14px;margin:10px 0 22px;line-height:1.6">Every market day EAB's paper-trading desk publishes a free educational digest of disclosed pre-market movers and momentum study. Paper-only / simulation. Not financial advice. No income, earnings, or performance guarantees.</p><div class="disc-banner"><b>DISCLAIMER:</b> This digest is produced by EAB&#x27;s paper-trading desk and is strictly for EDUCATIONAL / SIMULATION use only. It is NOT financial advice and does NOT constitute a recommendation to buy, sell, or hold any security. All ticker levels shown (ENTRY, ALERT, DO NOT BUY AFTER, QUICK TARGET) are ILLUSTRATIVE and DERIVED FROM PAPER-TRADING COMMITTEE DATA — they are NOT real intraday quotes, analyst price targets, or broker recommendations. Past paper-trade results are not indicative of future results. EAB makes NO income, earnings, profit, or performance guarantees of any kind. No live trading, no real brokerage, no real money is involved. Users are solely responsible for their own investment and risk decisions. Apply your own capital management rules at all times. This is a learning tool for momentum and paper-trading concepts only.</div><div class="postcard"><a class="tt" href="2026-06-21.html">Fast Mover Watch 2026-06-21 — 8 Pre-Market Momentum Signals (Paper Educational)</a><div class="dt">2026-06-21 · Paper / educational</div><div class="teaser">Paper-educational pre-market momentum digest for 2026-06-21: 8 disclosed movers (LYEL, IONQ). Illustrative levels, 10AM discipline. Not financial...</div><div style="margin-top:8px"><a href="2026-06-21.html">Read post &rarr;</a></div></div></div><div class="wrap"><div class="cta-strip">
+  <div class="prod">
+    <div class="kk">Daily Signal Watchlist</div>
+    <h3>Fast Mover Watch</h3>
+    <p>Unlock the full daily watchlist with illustrative entry / alert / cutoff / target levels,
+       the 10AM hard-exit discipline, per-analyst breakdown, and the paper ledger. Educational,
+       paper-only. Not financial advice.</p>
+    <div class="price">From $79/mo · $199/qtr · $699/yr</div>
+    <a class="btn" href="https://egirald.gumroad.com/l/fast-mover-watch">Subscribe from $79/mo &rarr;</a>
+  </div>
+  <div class="prod">
+    <div class="kk">Build Your Own</div>
+    <h3>The AI Money Machine</h3>
+    <p>Learn to build an AI organization that runs your money and businesses on a $0/month home PC —
+       a paper-first trading committee, a content engine, and a self-healing back-office. Educational
+       only. No income guarantees.</p>
+    <div class="price">Lifetime access · $149</div>
+    <a class="btn" href="https://egirald.gumroad.com/l/tvjadh">Get the course — $149 &rarr;</a>
+  </div>
+</div>
+<p class="footnav">
+  <a href="../index.html">Home</a>·<a href="../blog/index.html">Blog</a>·<a href="../free/index.html">Free sample</a>
+  <br><span style="color:var(--dim)">PAPER-TRADING / SIMULATION / EDUCATIONAL USE ONLY. Not financial advice. No income, earnings, or performance guarantees. All examples are illustrative and not predictive. Users must apply their own risk management rules. No live trading. No real brokerage. Not a solicitation.</span>
+</p></div><div class="wrap"><div class="footer">EAB Paper-Trading Desk · EDUCATIONAL / SIMULATION ONLY · NOT FINANCIAL ADVICE · NO LIVE TRADING<br>PAPER-TRADING / SIMULATION / EDUCATIONAL USE ONLY. Not financial advice. No income, earnings, or performance guarantees. All examples are illustrative and not predictive. Users must apply their own risk management rules. No live trading. No real brokerage. Not a solicitation.<br>Generated 2026-06-21T17:52:27Z</div></div></body></html>
