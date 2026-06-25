@@ -130,6 +130,14 @@ a:hover { text-decoration: underline; }
   // buy_click: delegated, fires for any Gumroad checkout link regardless of markup
   document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="gumroad.com"]');if(a&&window.posthog){var m=(a.href.match(/\/l\/([a-z0-9-]+)/i)||[])[1]||null;posthog.capture('buy_click',{href:a.href,product:m,label:(a.textContent||'').trim().slice(0,80),page:location.pathname});}},true);
   </script>
+  <!-- Typography: Space Grotesk + Inter (EAB funnel standard) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body, body * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif; }
+  </style>
 </head>
 <body>
 <div class="nav"><a class="logo" href="index.html">EAB</a><a href="index.html">Home</a><a href="blog/index.html">Blog</a><a href="free/index.html">Free sample</a><a href="construct-sampler.html">Construct sampler</a><a href="https://egiraldmu1795.github.io/eab-paper-desk-demo/">Live demo</a><span class="spacer"></span><a class="btn ghost" href="https://egirald.gumroad.com/l/fast-mover-watch">Subscribe</a></div>

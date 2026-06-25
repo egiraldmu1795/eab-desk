@@ -271,6 +271,14 @@ a:hover { text-decoration: underline; }
   // buy_click: delegated, fires for any Gumroad checkout link regardless of markup
   document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="gumroad.com"]');if(a&&window.posthog){var m=(a.href.match(/\/l\/([a-z0-9-]+)/i)||[])[1]||null;posthog.capture('buy_click',{href:a.href,product:m,label:(a.textContent||'').trim().slice(0,80),page:location.pathname});}},true);
   </script>
+  <!-- Typography: Space Grotesk + Inter (EAB funnel standard) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body, body * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif; }
+  </style>
 </head>
 <body><div class="nav"><a class="logo" href="../index.html">EAB</a><a href="../index.html">Home</a><a href="../blog/index.html">Blog</a><a href="../free/index.html">Free sample</a><span class="spacer"></span><a class="btn ghost" href="https://egirald.gumroad.com/l/fast-mover-watch">Subscribe</a></div><div class="wrap"><div class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Blog</a> / 2026-06-21</div><h1 style="font-size:26px;color:var(--text);font-weight:900;line-height:1.2">Fast Mover Watch 2026-06-21 — 8 Pre-Market Momentum Signals (Paper Educational)</h1><div class="digest-embed">
 <div class="disc-banner"><b>DISCLAIMER:</b> This digest is produced by EAB's paper-trading desk and is strictly for EDUCATIONAL / SIMULATION use only. It is NOT financial advice and does NOT constitute a recommendation to buy, sell, or hold any security. All ticker levels shown (ENTRY, ALERT, DO NOT BUY AFTER, QUICK TARGET) are ILLUSTRATIVE and DERIVED FROM PAPER-TRADING COMMITTEE DATA — they are NOT real intraday quotes, analyst price targets, or broker recommendations. Past paper-trade results are not indicative of future results. EAB makes NO income, earnings, profit, or performance guarantees of any kind. No live trading, no real brokerage, no real money is involved. Users are solely responsible for their own investment and risk decisions. Apply your own capital management rules at all times. This is a learning tool for momentum and paper-trading concepts only.</div>
